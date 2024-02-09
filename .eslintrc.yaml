@@ -1,0 +1,42 @@
+root: true
+
+env:
+  browser: true
+  es6: true
+  node: true
+
+plugins:
+  - 'react-refresh'
+
+extends:
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:react-hooks/recommended'
+
+ignorePatterns:
+  - 'dist'
+  - 'node_modules/'
+
+parser:
+  '@typescript-eslint/parser'
+
+rules:
+  no-var: error # Prevent use keyword 'var'
+  semi: [error, always] # Set semicolon to end of line
+  quotes: [error, single, {avoidEscape: true}] # Only use single quotation
+  jsx-quotes: [ error, prefer-single ] # Should be used single quotation marks around the string
+  camelcase: [ error, { allow: [ '$_*' ] } ] # Camel case should be used , but it can start with $ or _
+  no-use-before-define: [ error, { variables: false, functions: false } ] # Prevent use before define
+  import/extensions: off # Allow to skip extensions in keyword Import
+
+  no-tabs: error # Prevent use tab
+  no-multiple-empty-lines: [error, {max: 2, maxBOF: 1, maxEOF: 1}] # Allow empty line in
+  object-curly-spacing: [error] # Prevent curly spacing inside of object
+  object-curly-newline: [error, {consistent: true}] # If object starts with a new line, it should also end with a new line
+  curly: [error, all] # When keyword 'if' is used, it should be followed by curly brackets
+  no-trailing-spaces: [ 'error', { skipBlankLines: true } ] # Prevent spacing on end of line
+
+  react-refresh/only-export-components: [warn,{ allowConstantExport: true }]
+  react/react-in-jsx-scope: off # Do not check this : import React from 'react'
+
+  '@typescript-eslint/no-explicit-any': off # Allow to use type 'any'
