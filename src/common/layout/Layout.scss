@@ -1,0 +1,21 @@
+@import './LayoutConstants';
+
+.common-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  .common-layout__content {
+    flex: 1 0 calc(100% - $common-header-height - $common-footer-height);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+    .common-layout__content__main {
+      flex: 1 0 calc(100% - $common-lnb-width);
+    }
+  }
+}
