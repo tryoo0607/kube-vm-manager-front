@@ -40,3 +40,12 @@ rules:
   react/react-in-jsx-scope: off # Do not check this : import React from 'react'
 
   '@typescript-eslint/no-explicit-any': off # Allow to use type 'any'
+
+overrides:
+  - files: '*.json'
+    plugins:
+      - eslint-plugin-json
+#  - files: '*.test.tsx'
+#    rules:
+#      testing-library/prefer-screen-queries: off
+#      testing-library/no-unnecessary-act: off
