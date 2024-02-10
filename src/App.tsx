@@ -1,14 +1,13 @@
 import './App.scss';
 import './styles/Entry.scss';
-import Layout from './common/layout/Layout.tsx';
+import Router from './router/Router.tsx';
+
 
 function App() {
 
   return (
     <div className={'app'}>
-      <Layout>
-        test
-      </Layout>
+      <Router/>
     </div>
   );
 }
