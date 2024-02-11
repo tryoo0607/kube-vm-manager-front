@@ -15,10 +15,13 @@ const CommonLayout = (props: CommonLayoutProps) => {
   // Hooks
   const location = useLocation();
   const [currentLocation, setCurrentLocation] = useState<string>('');
+  const rootGnb = GnbRouteInfo[0];
 
   // Privates
-  const currentLnMenus = useMemo(() => {
-    return GnbRouteInfo.find(item => item.path === currentLocation);
+  const currentLnbMenus = useMemo(() => {
+    const menus = GnbRouteInfo.find(item => item.path === currentLocation);
+
+    return menus ? menus : rootGnb;
   },[currentLocation]);
 
 
@@ -27,7 +30,7 @@ const CommonLayout = (props: CommonLayoutProps) => {
     const currentLocationArray: string[] = location.pathname.split(/(?=\/)/);
     setCurrentLocation(currentLocationArray[0]);
 
-  }, [location.pathname]);
+  }, [location, setCurrentLocation]);
 
 
   return(
@@ -36,7 +39,7 @@ const CommonLayout = (props: CommonLayoutProps) => {
       <section className={'common-layout__content'}>
         {
           props.lnb && (
-            <Lnb lnbObject={currentLnMenus}/>
+            <Lnb lnbObject={currentLnbMenus}/>
           )
         }
         <main className={'common-layout__content__main'}>
