@@ -17,6 +17,10 @@
     .common-layout__content__main {
       flex: 1 1 calc(100% - $kvm-lnb-width);
       height: 100%;
+
+      .common-layout__content__main__route-area {
+        padding: 20px;
+      }
     }
   }
 }

@@ -43,7 +43,9 @@ const CommonLayout = (props: CommonLayoutProps) => {
           )
         }
         <main className={'common-layout__content__main'}>
-          <Outlet/>
+          <div className={'common-layout__content__main__route-area'}>
+            <Outlet/>
+          </div>
         </main>
       </section>
       <Footer/>
