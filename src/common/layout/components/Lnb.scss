@@ -1,0 +1,11 @@
+@import 'LayoutConstants';
+
+.kvm-lnb {
+  flex: 0 0 $kvm-lnb-width;
+  background-color: $white;
+  width: $kvm-lnb-width;
+  height: 100%;
+
+  border-right: 1px solid $kvm-layout-border;
+  box-shadow: 2px 0 5px -2px $color-gray-500;
+}

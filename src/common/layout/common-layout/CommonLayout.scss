@@ -1,4 +1,4 @@
-@import './LayoutConstants';
+@import '../components/LayoutConstants';
 
 .common-layout {
   display: flex;
@@ -8,14 +8,15 @@
   height: 100vh;
 
   .common-layout__content {
-    flex: 1 0 calc(100% - $common-header-height - $common-footer-height);
+    flex: 1 1 calc(100% - $kvm-header-height - $kvm-footer-height);
     display: flex;
     align-items: center;
     flex-direction: row;
     width: 100%;
 
     .common-layout__content__main {
-      flex: 1 0 calc(100% - $common-lnb-width);
+      flex: 1 1 calc(100% - $kvm-lnb-width);
+      height: 100%;
     }
   }
 }

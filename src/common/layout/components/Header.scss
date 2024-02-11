@@ -1,0 +1,43 @@
+@import 'LayoutConstants';
+@import '@fontsource/roboto/400.css';
+
+.kvm-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: $kvm-header-height;
+  border-bottom: 1px solid $kvm-layout-border;
+
+  .kvm-header__logo-container {
+    flex: 0 0  $kvm-header-logo-container-width;
+    display: flex;
+    gap: 10px;
+
+    align-items: center;
+    cursor: pointer;
+
+    .kvm-header__logo-container__logo {
+      flex: 0 0 auto;
+      padding-left: 15px;
+    }
+
+    .kvm-header__logo-container__text {
+      color: $kvm-primary;
+      font-family: Roboto, serif;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .kvm-header__menu-container {
+    flex: 1 1 calc(100% - $kvm-header-logo-container-width - $kvm-header-info-container-width);
+    align-items: center;
+  }
+
+  .kvm-header__info-container {
+    flex: 0 0  $kvm-header-info-container-width;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+}

@@ -2,8 +2,8 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <footer className={'common-footer'}>
-      Footer
+    <footer className={'kvm-footer'}>
+
     </footer>
   );
 };

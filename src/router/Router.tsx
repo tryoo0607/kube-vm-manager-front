@@ -1,7 +1,7 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {RouterInfo} from './path/RouterInfo';
+import GnbRouteInfo from './path/RouteInfo.tsx';
 
-const RouterObject = createBrowserRouter(RouterInfo);
+const RouterObject = createBrowserRouter(GnbRouteInfo);
 
 const Router = () => {
   return (

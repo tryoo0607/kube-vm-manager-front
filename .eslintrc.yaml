@@ -39,7 +39,10 @@ rules:
   react-refresh/only-export-components: [warn,{ allowConstantExport: true }]
   react/react-in-jsx-scope: off # Do not check this : import React from 'react'
 
+  no-unused-vars: off
+  '@typescript-eslint/no-unused-vars': [error]
   '@typescript-eslint/no-explicit-any': off # Allow to use type 'any'
+
 
 overrides:
   - files: '*.json'
