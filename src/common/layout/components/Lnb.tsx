@@ -1,7 +1,7 @@
 import './Lnb.scss';
 import {List, ListItem, ListItemButton, ListItemText} from '@mui/material';
 import {RouteInfoObject} from '../../../router/Router.abstract.tsx';
-import React, {useCallback, useMemo} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 
 export interface LnbProps {
@@ -13,10 +13,11 @@ const Lnb = (props: LnbProps) => {
   // Hooks
   const navigate = useNavigate();
   const location = useLocation();
+  const [currentLocation, setCurrentLocation] = useState<string[]>(location.pathname.split('/'));
+
 
   // Privates
   const routeTo = useCallback((url: string) => {
-    const currentLocation = location.pathname.split('/');
 
     if(currentLocation[currentLocation.length -1] === url) {
       navigate(url, {replace: true});
@@ -26,6 +27,7 @@ const Lnb = (props: LnbProps) => {
 
   }, [location, navigate]);
 
+
   // Events
   const onClickMenu = useCallback((path: string) => {
 
@@ -34,19 +36,26 @@ const Lnb = (props: LnbProps) => {
   },[routeTo]);
 
 
-  // Template
+  // Templates
   const lnbMenu = useMemo(() => {
 
     return props.lnbObject?.children ? props.lnbObject.children : [];
 
   },[props.lnbObject]);
 
+
+  // LifeCycles
+  useEffect(() => {
+    setCurrentLocation(location.pathname.split('/'));
+  }, [setCurrentLocation, location]);
+
+
   return (
     <aside className={'kvm-lnb'}>
       <List>
         {lnbMenu.map((info) => (
           <ListItem key={info.title} disablePadding>
-            <ListItemButton onClick={() => onClickMenu(info.path ? info.path : '')}>
+            <ListItemButton selected={currentLocation[currentLocation.length -1] === info.path} onClick={() => onClickMenu(info.path ? info.path : '')}>
               <ListItemText primary={info.title}/>
             </ListItemButton>
           </ListItem>
