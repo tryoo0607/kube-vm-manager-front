@@ -18,14 +18,13 @@ const Lnb = (props: LnbProps) => {
 
   // Privates
   const routeTo = useCallback((url: string) => {
-
     if(currentLocation[currentLocation.length -1] === url) {
       navigate(url, {replace: true});
     } else {
       navigate(url);
     }
 
-  }, [location, navigate]);
+  }, [currentLocation, navigate]);
 
 
   // Events
