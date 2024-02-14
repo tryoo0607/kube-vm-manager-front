@@ -50,7 +50,7 @@ const Lnb = (props: LnbProps) => {
 
 
   return (
-    <aside className={'kvm-lnb'}>
+    <aside className={'manager-lnb'}>
       <List>
         {lnbMenu.map((info) => (
           <ListItem key={info.title} disablePadding>

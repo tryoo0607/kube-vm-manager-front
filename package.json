@@ -1,5 +1,5 @@
 {
-  "name": "kube-vm-manager-front",
+  "name": "vm-manager-on-kube-ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",

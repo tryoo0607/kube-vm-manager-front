@@ -1,13 +1,13 @@
 @import 'LayoutConstants';
 @import '@fontsource/roboto/400.css';
 
-.kvm-lnb {
-  flex: 0 0 $kvm-lnb-width;
+.manager-lnb {
+  flex: 0 0 $manager-lnb-width;
   background-color: $white;
-  width: $kvm-lnb-width;
+  width: $manager-lnb-width;
   height: 100%;
 
-  border-right: 1px solid $kvm-layout-border;
+  border-right: 1px solid $manager-layout-border;
   box-shadow: 2px 0 5px -2px $color-gray-500;
 
   .MuiListItemText-primary {
@@ -16,7 +16,7 @@
   }
 
   .Mui-selected {
-    color: $kvm-primary;
+    color: $manager-primary;
 
     .MuiListItemText-primary {
       font-family: Roboto, serif;

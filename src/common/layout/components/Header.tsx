@@ -48,14 +48,14 @@ const Header = (props: HeaderProps) => {
   }, [props.currentLocation]);
 
   return (
-    <header className={'kvm-header'}>
-        <div className={'kvm-header__logo-container'} onClick={onClickLogo}>
-            <div className={'kvm-header__logo-container__logo'}>
+    <header className={'manager-header'}>
+        <div className={'manager-header__logo-container'} onClick={onClickLogo}>
+            <div className={'manager-header__logo-container__logo'}>
               <Icon fontSize={'large'}>settings_application</Icon>
             </div>
-            <div className={'kvm-header__logo-container__text'}>Kube VM Manager</div>
+            <div className={'manager-header__logo-container__text'}>VM Manager On Kube</div>
         </div>
-        <div className={'kvm-header__menu-container'}>
+        <div className={'manager-header__menu-container'}>
           <Tabs value={tabValue} centered onChange={onClickMenu}>
             {GnbRouteInfo.map((info) => (
               info.title !== 'root' && (
@@ -64,7 +64,7 @@ const Header = (props: HeaderProps) => {
             ))}
           </Tabs>
         </div>
-        <div className={'kvm-header__info-container'}>
+        <div className={'manager-header__info-container'}>
           <Avatar></Avatar>
         </div>
     </header>
